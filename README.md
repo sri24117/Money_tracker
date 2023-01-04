@@ -1,4 +1,4 @@
-Transactions API
+#Transactions API
 
 This is a Django-based REST API for managing transactions and users. It includes the following features:
 
@@ -16,7 +16,7 @@ Django's built-in authentication system to authenticate users
 Django's built-in ORM to store data in an SQLite database
 
 
-Installation:
+#Installation:
 To install and set up the API, follow these steps:
 ​
 Clone the repository and navigate to the root directory:
@@ -64,7 +64,7 @@ The following API endpoints are available:
 
 You can use HTTP methods such as GET, POST, PUT, and DELETE to perform actions on these endpoints.
 
-Authentication
+#Authentication
 
 
 The API uses Django's built-in authentication system to authenticate users. To make authenticated requests, you will need to include a Authorization: Token YOUR_TOKEN header in your request, where YOUR_TOKEN is the token for the user you want to authenticate as. You can obtain a user's token by sending a POST request to the /api-token-auth/ endpoint with the user's username and password.
