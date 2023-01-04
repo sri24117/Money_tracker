@@ -1,30 +1,70 @@
-# Python on Replit
+Transactions API
 
-This is a template to get you started with Python on Replit. It's ready to go so you can just hit run and start coding!
+This is a Django-based REST API for managing transactions and users. It includes the following features:
 
-## Running the repl
+​
+List of known users (friends)
 
-1. Setup a new secret environment variable (the lock icon) where the key is `SECRET_KEY` and the value is
-   a randomly generated token of 32 bits of randomnese. To generate such a token type this into the shell and hit Enter:
-```
-python
-import secrets
-secrets.token_urlsafe(32)
-```
-2. Hit run!
+Creating, updating, and deleting transactions
 
-See this 1 minute video for a walkthrough: [https://www.loom.com/share/ecc4e738149f4d1db3bcff01758b3e71](https://www.loom.com/share/341b5574d12040fb9fcbbff150777f1c)
+Associating transactions with sets of users to split them across
 
-## Installing packages
+Spending categories for transactions
 
-To add packages to your repl, you can just import directly in the file you want to use the package in, and it will automatically be installed when you press the run button. Like below:
-```python
-import math
-import pandas as pd
-```
+Django's built-in authentication system to authenticate users
 
-You could also install packages by using the Replit packager interface in the left sidebar.
+Django's built-in ORM to store data in an SQLite database
 
-## Help
 
-If you need help you might be able to find an answer on our [docs](https://docs.replit.com) page. Feel free to report bugs and give us feedback [here](https://replit.com/support).
+Installation:
+To install and set up the API, follow these steps:
+​
+Clone the repository and navigate to the root directory:
+​
+git clone https://github.com/YOUR_USERNAME/transactions-api.git
+
+cd transactions-api
+
+​
+Create a virtual environment and activate it:
+
+python -m venv venv
+
+source venv/bin/activate
+​
+
+Install the required dependencies:
+
+pip install -r requirements.txt
+
+
+Migrate the database:
+python manage.py migrate
+
+Create a superuser account:
+
+python manage.py createsuperuser
+
+​
+Start the development server:
+
+python manage.py runserver
+
+The API will be available at http://localhost:8000/.
+
+​
+Endpoints
+
+The following API endpoints are available:
+
+
+/users/: List of known users
+
+/transactions/: List of transactions
+
+You can use HTTP methods such as GET, POST, PUT, and DELETE to perform actions on these endpoints.
+
+Authentication
+
+
+The API uses Django's built-in authentication system to authenticate users. To make authenticated requests, you will need to include a Authorization: Token YOUR_TOKEN header in your request, where YOUR_TOKEN is the token for the user you want to authenticate as. You can obtain a user's token by sending a POST request to the /api-token-auth/ endpoint with the user's username and password.
